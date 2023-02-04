@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <>
-      {/* <AuthContextProvider> */}
+       <AuthContextProvider> 
       <Navbar/>
       <Routes>
         <Route path ='/' element={<Home/>} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/account" element={<Account/>}/>
       </Routes>
       
-      {/* </AuthContextProvider> */}
+      </AuthContextProvider> 
   
       </>
     </div>
