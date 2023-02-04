@@ -5,7 +5,7 @@ const Movie = ({item})=> {
     const [like, setLike] = useState (false)
 
   return (
-    <div className='w-[160px] sm:w-[240px] md:w-[280px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
+    <div className='w-[160px] sm:w-[240px] md:w-[280px] lg:w-[280px] inline-block cursor-pointer relative p-2 '>
                 
                    <img 
                    className='w-full h-auto block'
@@ -17,7 +17,7 @@ const Movie = ({item})=> {
                         <p className='white-space-normal text-xs md:text-smfont-bold flex justify-center items-center h-full text-center'>{item?.title}</p>
                          <p>
                             {like ? (
-                            <FaHeart className='absolute top-4 text-gray-300'/>
+                            <FaHeart className='absolute top-4 text-gray-300 '/>
                             )
                              : (<FaRegHeart className='absolute top-4 text-gray-300'/>
                              )}
