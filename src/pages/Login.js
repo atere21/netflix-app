@@ -6,6 +6,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { user, logIn } = UserAuth();
+    const [error, setError] = useState('')
     const navigate = useNavigate()
   
     const handleSubmit = async (e) => {
@@ -15,6 +16,8 @@ function Login() {
         navigate('/')
       } catch (error) {
         console.log(error);
+        setError(error.message)
+
       }
     };
 
@@ -29,9 +32,14 @@ function Login() {
 
                <div className='max-w-[320px] mx-auto py-16'>
                 <h1 className='text-3xl font-bold'>Sign In</h1>
-                       <form className='w-full flex flex-col '>
-                        <input className='p-3 my-2 bg-gray-600 rounded' type='email number'   placeholder='Email or phone number' autoComplete='email'/>
-                        <input className='p-3 my-2 bg-gray-600 rounded' type="password" placeholder='Password' autoComplete='current-password' />
+                      {error ? <p className='p-3 bg-red-600 my-2'>{'error'} </p>:null} 
+                      
+                       <form onSubmit={handleSubmit}
+                       className='w-full flex flex-col '>
+                        <input onChange={(e) => setEmail(e.target.value)}
+                         className='p-3 my-2 bg-gray-600 rounded' type='email number'   placeholder='Email or phone number' autoComplete='email'/>
+                        <input onChange={(e) => setPassword(e.target.value)}
+                         className='p-3 my-2 bg-gray-600 rounded' type="password" placeholder='Password' autoComplete='current-password' />
                              
                              <button className='bg-red-600 py-3 my-6 rounded font-bold ' >Sign In</button>
                        
