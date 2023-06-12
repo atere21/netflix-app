@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 
 
 const Landing = () => {
+  
   return (
     <>
       <div className='w-full text-white '>
@@ -16,12 +18,9 @@ const Landing = () => {
           <h1 className='text-2xl md:text-4xl font-bold'>Recreating the magic of Netflix with our captivating and user-friendly streaming platform.</h1>
           
           <p className='my-4'> Experience the Ultimate Streaming Adventure with Our Netflix Clone, a Feature-rich Platform that Brings Joy, Variety, and Seamless Viewing to Your Fingertips.</p>
-          <Link to='/home' >
-            <button className='text-white bg-red-800 rounded-md p-2 my-8 hover:bg-red-600'>
-                See Netflix-Clone
-            </button>
-            </Link>
-        
+          <button className='bg-red-700 text-white rounded-md p-2 hover:bg-red-600 cursor-pointer'>
+          <Link to='/login'>See Netflix-Clone</Link>
+          </button>
         </div>
            
       </div>

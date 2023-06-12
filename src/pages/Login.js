@@ -13,7 +13,7 @@ function Login() {
       e.preventDefault();
       try {
         await logIn(email, password);
-        navigate('/')
+        navigate('/home')
       } catch (error) {
         console.log(error);
         setError(error.message)
@@ -37,7 +37,7 @@ function Login() {
                        <form onSubmit={handleSubmit}
                        className='w-full flex flex-col '>
                         <input onChange={(e) => setEmail(e.target.value)}
-                         className='p-3 my-2 bg-gray-600 rounded' type='email number'   placeholder='Email or phone number' autoComplete='email'/>
+                         className='p-3 my-2 bg-gray-600 rounded' type='email number'  placeholder='Email or phone number' autoComplete='email'/>
                         <input onChange={(e) => setPassword(e.target.value)}
                          className='p-3 my-2 bg-gray-600 rounded' type="password" placeholder='Password' autoComplete='current-password' />
                              
@@ -51,7 +51,7 @@ function Login() {
                        </div>
                        <p className='py-4'><span className='mr-2'>New to Netflix?
                         </span>
-                        {''} <Link to ='/signup'> Sign Up now
+                        {''} <Link to ='/signup'>Sign Up now
                             </Link>
                         </p>
                        
