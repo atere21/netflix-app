@@ -8,21 +8,23 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Landing from "./pages/Landing";
+import Hero from "./pages/Hero";
 
 
 function App() {
   useEffect(() => {
-    document.title = "Your Netflix Clone"; // Set the title of the page here
+    document.title = "Your Financial service"; // Set the title of the page here
   }, []);
 
   return (
     <AuthContextProvider>
       <Navbar />
       <Routes>
-      <Route path="/" element={<Landing />} />
+      <Route path="/" element={<Hero />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/landing" element={<Landing />} />
         <Route
           path="/account"
           element={
